@@ -50,12 +50,12 @@ function FlightPricePredictor() {
             className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           >
             <option value="">Select Airline</option>
-            <option value="SpiceJet">Sri Lankan Airlines</option>
-            <option value="AirAsia">Air India</option>
+            <option value="SpiceJet">SpiceJet</option>
+            <option value="AirAsia">AirAsia</option>
             <option value="Vistara">Vistara</option>
-            <option value="GO_FIRST">FitsAir</option>
+            <option value="GO_FIRST">GO_FIRST</option>
             <option value="Indigo">Indigo</option>
-            <option value="Air_India">SpiceJet</option>
+            <option value="Air_India">Air India</option>
           </select>
         </div>
 
