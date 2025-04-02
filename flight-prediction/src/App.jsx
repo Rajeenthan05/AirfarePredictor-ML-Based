@@ -69,10 +69,10 @@ function FlightPricePredictor() {
             className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           >
             <option value="">Select Source City</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Mumbai">Mumbai</option>
+            <option value="Colombo">Colombo</option>
+            <option value="Jaffna">Jaffna</option>
             <option value="Bangalore">Bangalore</option>
-            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
             <option value="Hyderabad">Hyderabad</option>
             <option value="Chennai">Chennai</option>
           </select>
@@ -142,10 +142,10 @@ function FlightPricePredictor() {
             className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           >
             <option value="">Select Destination City</option>
-            <option value="Delhi">Delhi</option>
-            <option value="Mumbai">Mumbai</option>
+            <option value="Colombo">Colombo</option>
+            <option value="Jaffna">Jaffna</option>
             <option value="Bangalore">Bangalore</option>
-            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
             <option value="Hyderabad">Hyderabad</option>
             <option value="Chennai">Chennai</option>
           </select>
@@ -189,7 +189,7 @@ function FlightPricePredictor() {
 
       {prediction !== null && (
         <div className="mt-6 p-4 bg-green-100 rounded-lg text-green-700">
-          <h2 className="text-xl font-semibold">Your Flight Price: ₹{prediction}</h2>
+          <h2 className="text-xl font-semibold">Your Flight Price: Rs{prediction}</h2>
         </div>
       )}
     </div>
