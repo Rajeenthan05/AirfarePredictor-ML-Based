@@ -6,17 +6,16 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-
 # Load the pre-trained model
 model = pickle.load(open('model.pkl', 'rb'))
 
 # Dictionaries for categorical variables
-airline_dict = {'Sri Lankan Airlines': 0, "Air India": 1, "Vistara": 2, "FitsAir": 3, "Indigo": 4, "SpiceJet": 5}
-source_dict = {'Colombo': 0, "Jaffna": 1, "Bangalore": 2, "Delhi": 3, "Hyderabad": 4, "Chennai": 5}
+airline_dict = {'AirAsia': 0, "Indigo": 1, "GO_FIRST": 2, "Sri_Lankan_AirLines": 3, "Air_India": 4, "Vistara": 5}
+source_dict = {'Colombo': 0, "Hyderabad": 1, "Bangalore": 2, "Jaffna": 3, "Kolkata": 4, "Chennai": 5}
 departure_dict = {'Early_Morning': 0, "Morning": 1, "Afternoon": 2, "Evening": 3, "Night": 4, "Late_Night": 5}
 stops_dict = {'zero': 0, "one": 1, "two_or_more": 2}
 arrival_dict = {'Early_Morning': 0, "Morning": 1, "Afternoon": 2, "Evening": 3, "Night": 4, "Late_Night": 5}
-destination_dict = {'Colombo': 0, "Jaffna": 1, "Bangalore": 2, "Delhi": 3, "Hyderabad": 4, "Chennai": 5}
+destination_dict = {'Colombo': 0, "Hyderabad": 1, "Jaffna": 2, "Bangalore": 3, "Chennai": 4, "Kolkata": 5}
 class_dict = {'Economy': 0, 'Business': 1}
 
 @app.route('/predict', methods=['POST'])

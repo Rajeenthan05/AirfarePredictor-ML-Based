@@ -27,12 +27,22 @@ function FlightPricePredictor() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:5000/predict', formData);
-      setPrediction(response.data.prediction);
+        const response = await axios.post('http://127.0.0.1:5000/predict', formData);
+        setPrediction(response.data.prediction);
+
+        // Show popup message after setting the price
+        if (formData.airline) {
+            const airlineName = formData.airline.replace(/_/g, ' ');
+            setTimeout(() => {
+                alert(`Enjoy Your Journey with ${airlineName}`);
+            }, 100); // Small delay to ensure the price appears first
+        }
     } catch (error) {
-      console.error('Error fetching prediction:', error);
+        console.error('Error fetching prediction:', error);
     }
-  };
+};
+
+
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
@@ -50,12 +60,12 @@ function FlightPricePredictor() {
             className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
           >
             <option value="">Select Airline</option>
-            <option value="Sri Lankan Airlines">Sri Lankan Airlines</option>
-            <option value="Air India">Air India</option>
+            <option value="Sri_Lankan_AirLines">Sri Lankan AirLines</option>
+            <option value="AirAsia">AirAsia</option>
             <option value="Vistara">Vistara</option>
-            <option value="FitsAir">FitsAir</option>
+            <option value="GO_FIRST">GO_FIRST</option>
             <option value="Indigo">Indigo</option>
-            <option value="SpiceJet">SpiceJet</option>
+            <option value="Air_India">Air India</option>
           </select>
         </div>
 
@@ -72,7 +82,7 @@ function FlightPricePredictor() {
             <option value="Colombo">Colombo</option>
             <option value="Jaffna">Jaffna</option>
             <option value="Bangalore">Bangalore</option>
-            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
             <option value="Hyderabad">Hyderabad</option>
             <option value="Chennai">Chennai</option>
           </select>
@@ -145,7 +155,7 @@ function FlightPricePredictor() {
             <option value="Colombo">Colombo</option>
             <option value="Jaffna">Jaffna</option>
             <option value="Bangalore">Bangalore</option>
-            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
             <option value="Hyderabad">Hyderabad</option>
             <option value="Chennai">Chennai</option>
           </select>
@@ -189,7 +199,7 @@ function FlightPricePredictor() {
 
       {prediction !== null && (
         <div className="mt-6 p-4 bg-green-100 rounded-lg text-green-700">
-          <h2 className="text-xl font-semibold">Your Flight Price: Rs{prediction}</h2>
+          <h2 className="text-xl font-semibold">Your Flight Price: LKR {prediction}</h2>
         </div>
       )}
     </div>
